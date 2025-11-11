@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - /Users/snehareddy/jenkinshome:/var/jenkins_home
+      - /Users/snehareddy/.docker/run/docker.sock:/var/run/docker.sock
+
